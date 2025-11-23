@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Corner | Student Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="StudentHome.css">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <i class="fas fa-couch"></i> Cozy Corner
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">Find PGs</a>
+            <a href="#">Find Flats</a>
+            <a href="#">My Bookings</a>
+        </div>
+        <div class="user-profile">
+            <span>Hello, Student</span>
+            <div class="avatar">S</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Find Your Cozy Spot</h1>
+        <p>Search for verified PGs, Hostels, and Flats near your campus.</p>
+        
+        <div class="search-bar">
+            <input type="text" id="searchInput" class="search-input" placeholder="Enter College Name or Area (e.g., North Campus)">
+            <select class="search-select">
+                <option>All Types</option>
+                <option>PG (Boys)</option>
+                <option>PG (Girls)</option>
+                <option>Flat 1BHK</option>
+                <option>Flat 2BHK</option>
+            </select>
+            <button class="search-btn" onclick="performSearch()">Search</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Filter Section -->
+        <div class="section-header">
+            <div class="section-title">Recommended Stays</div>
+            <div class="filters">
+                <div class="filter-pill active" data-filter="all">All</div>
+                <div class="filter-pill" data-filter="short">Short Term</div>
+                <div class="filter-pill" data-filter="long">Long Term</div>
+                <div class="filter-pill" data-filter="metro">Near Metro</div>
+            </div>
+        </div>
+
+        <!-- Listings Grid -->
+        <div class="listings-grid" id="listingsGrid">
+            
+            <!-- Card 1 -->
+            <div class="card" data-category="long metro">
+                <div class="card-image img-1">
+                    <i class="fas fa-home"></i>
+                    <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified</div>
+                    <div class="card-heart"><i class="fas fa-heart"></i></div>
+                </div>
+                <div class="card-details">
+                    <div class="card-price">₹8,500 <span>/ month</span></div>
+                    <div class="card-title">Sunny Side PG (Boys)</div>
+                    <div class="card-location"><i class="fas fa-map-marker-alt"></i> 500m from University Gate</div>
+                    <div class="card-features">
+                        <div class="feature"><i class="fas fa-wifi"></i> Wifi</div>
+                        <div class="feature"><i class="fas fa-utensils"></i> Food</div>
+                        <div class="feature"><i class="fas fa-bed"></i> Single</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card" data-category="long">
+                <div class="card-image img-2">
+                    <i class="fas fa-building"></i>
+                    <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified</div>
+                    <div class="card-heart"><i class="fas fa-heart"></i></div>
+                </div>
+                <div class="card-details">
+                    <div class="card-price">₹9,000 <span>/ month</span></div>
+                    <div class="card-title">Greenwood Flats (2BHK)</div>
+                    <div class="card-location"><i class="fas fa-map-marker-alt"></i> Civil Lines, Near Market</div>
+                    <div class="card-features">
+                        <div class="feature"><i class="fas fa-snowflake"></i> AC</div>
+                        <div class="feature"><i class="fas fa-couch"></i> Furnished</div>
+                        <div class="feature"><i class="fas fa-users"></i> 4 Pax</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card" data-category="short metro">
+                <div class="card-image img-3">
+                    <i class="fas fa-door-open"></i>
+                    <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified</div>
+                    <div class="card-heart"><i class="fas fa-heart"></i></div>
+                </div>
+                <div class="card-details">
+                    <div class="card-price">₹2,400 <span>/ night</span></div>
+                    <div class="card-title">Cozy Studio (Short Term)</div>
+                    <div class="card-location"><i class="fas fa-map-marker-alt"></i> Central City Hub</div>
+                    <div class="card-features">
+                        <div class="feature"><i class="fas fa-calendar-alt"></i> Daily</div>
+                        <div class="feature"><i class="fas fa-tv"></i> TV</div>
+                        <div class="feature"><i class="fas fa-shower"></i> Attached</div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Card 4 -->
+             <div class="card" data-category="long">
+                <div class="card-image img-4">
+                    <i class="fas fa-building"></i>
+                    <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified</div>
+                    <div class="card-heart"><i class="fas fa-heart"></i></div>
+                </div>
+                <div class="card-details">
+                    <div class="card-price">₹6,000 <span>/ month</span></div>
+                    <div class="card-title">Daisy Girls Hostel</div>
+                    <div class="card-location"><i class="fas fa-map-marker-alt"></i> West Block, Sector 4</div>
+                    <div class="card-features">
+                        <div class="feature"><i class="fas fa-lock"></i> Secure</div>
+                        <div class="feature"><i class="fas fa-utensils"></i> 3 Meals</div>
+                        <div class="feature"><i class="fas fa-bolt"></i> Backup</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center;">
+            <button class="search-btn" onclick="alert('This would load more properties!')" style="background-color: transparent; color: var(--primary-color); border: 2px solid var(--primary-color);">View All Properties</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Cozy Corner. Made with <i class="fas fa-heart" style="color: var(--primary-color);"></i> for Students.</p>
+    </footer>
+    <script src="StudentHome.js"></script>
+
+</body>
+</html>
