@@ -26,7 +26,7 @@
             });
         });
 
-         gsap.from(".listing-grid", {
+         gsap.from(".listings-grid", {
   y: 50, // start 50px lower
   opacity: 0, // start invisible
   duration: 1, // 1 second animation
