@@ -26,13 +26,6 @@
             });
         });
 
-         gsap.from(".listings-grid", {
-  y: 50, // start 50px lower
-  opacity: 0, // start invisible
-  duration: 1, // 1 second animation
-  ease: "power2.out", // smooth easing
-  stagger: 0.2 // small delay between each card
-});
         // --- SEARCH LOGIC ---
         function performSearch() {
             const input = document.getElementById('searchInput').value;
